@@ -36,7 +36,7 @@
                                                     All Service Categories
                                                 </div>
                                                 <div class="col-xs-6">
-                                                <a href="{{route('admin.add_service')}}" class="btn btn-info pull-right">Add Service</a>
+                                                <a href="{{route('add_service')}}" class="btn btn-info pull-right">Add Service</a>
 
                                                 </div>
                                             </div>
@@ -89,7 +89,7 @@
                                                                     </td>
                                                                     <td>{{$service->category->name}}</td>
                                                                     <td>
-                                                                        <a href="{{route('admin.edit_service',['service_slug'=>$service->slug])}}" ><i class="fa fa-edit fa-2x text-info"></i></a>
+                                                                        <a href="{{route('edit_service',['service_slug'=>$service->slug])}}" ><i class="fa fa-edit fa-2x text-info"></i></a>
                                                                         <a href="#" onclick="confirm('Are you sure, Delete Service') || event.stopImmediatePropagation()" wire:click.prevent="deleteService({{$service->id}})"
                                                                         style="margin-left-10px" ><i class="fa fa-times fa-2x text-danger"></i></a>
                                                                     </td>

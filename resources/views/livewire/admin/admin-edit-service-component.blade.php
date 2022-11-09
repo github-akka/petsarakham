@@ -27,7 +27,7 @@
                                                 Edit Service 
                                             </div>
                                             <div class="col-md-6">
-                                                <a href="{{ route('admin.all_services')}}" class= "btn btn-info pull-right">All Services</a>
+                                                <a href="{{ route('sprovider.services')}}" class= "btn btn-info pull-right">All Services</a>
                                             </div>
                                         </div>
                                     </div>

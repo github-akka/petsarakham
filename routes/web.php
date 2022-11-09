@@ -170,8 +170,8 @@ Route::middleware(['auth:sanctum', 'verified', 'authsprovider'])->group(function
     Route::post('/room/update/{id}','App\Http\Controllers\SproviderRoomController@update');*/
 
   Route::get('/sprovider/my-services', AdminServicesComponent::class)->name('sprovider.services');
-  Route::get('/sprovider/service/add', AdminAddServiceComponent::class)->name('admin.add_service');
-  Route::get('/sprovider/services/edit/{service_slug}', AdminEditServiceComponent::class)->name('admin.edit_service');
+  Route::get('/sprovider/service/add', AdminAddServiceComponent::class)->name('add_service');
+  Route::get('/sprovider/services/edit/{service_slug}', AdminEditServiceComponent::class)->name('edit_service');
 
   // booking
   Route::get('/sprovider-orders', SproviderBookingComponent::class)->name('sprovider.order');
