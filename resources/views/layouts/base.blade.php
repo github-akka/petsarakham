@@ -99,7 +99,7 @@
                                         <ul class="drop-down one-column hover-fade">
                                             <li><a href="{{ route('sprovider.orders_ordered')}}">จองสำเร็จ</a></li>
                                             <li><a href="{{ route('sprovider.order')}}">รออนุมัติ</a></li>
-                                            <li><a href="{{ route('sprovider.orders_canceled')}}">ยกเลิกแล้ว</a></li>   
+                                            <li><a href="{{ route('sprovider.orders_cancelled')}}">ยกเลิกแล้ว</a></li>   
                                         </ul>
                                     </li>                                
                                     <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
@@ -117,7 +117,7 @@
                                         <ul class="drop-down one-column hover-fade">
                                             <li><a href="{{ route('my_booking_ordered')}}">จองสำเร็จ</a></li>
                                             <li><a href="{{ route('my_booking')}}">รออนุมัติ</a></li>
-                                            <li><a href="{{ route('my_booking_canceled')}}">ยกเลิกแล้ว</a></li>
+                                            <li><a href="{{ route('my_booking_cancelled')}}">ยกเลิกแล้ว</a></li>
                                             
                                         </ul> 
                                     </li>
