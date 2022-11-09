@@ -129,7 +129,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
   // booking
   //  Route::get('/service-booking/service_id={service_id}', ServiceBookingComponent::class)->name('service_booking');
   Route::get('/my-booking', MyBookingComponent::class)->name('my_booking');
-  Route::get('/my-booking-canceled', MybookingCancelComponent::class)->name('my_booking_canceled');
+  Route::get('/my-booking-cancelled', MybookingCancelComponent::class)->name('my_booking_cancelled');
   Route::get('/my-booking-ordered', MybookingOrderedComponent::class)->name('my_booking_ordered');
 
   //   Route::get('/booking/all',[BookingController::class,'index'])->name('booking.all');
@@ -176,6 +176,6 @@ Route::middleware(['auth:sanctum', 'verified', 'authsprovider'])->group(function
   // booking
   Route::get('/sprovider-orders', SproviderBookingComponent::class)->name('sprovider.order');
   Route::get('/sprovider/my-orders-ordered', BookingOrderedComponent::class)->name('sprovider.orders_ordered');
-  Route::get('/sprovider/my-orders-canceled', BookingCanceledComponent::class)->name('sprovider.orders_canceled');
+  Route::get('/sprovider/my-orders-cancelled', BookingCanceledComponent::class)->name('sprovider.orders_cancelled');
   // Route::get('/service-booking', ServiceBookingComponent::class)->name('service_booking');
 });
