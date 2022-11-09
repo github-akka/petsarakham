@@ -13,12 +13,12 @@
             <div class="bg_parallax image_02_parallax"></div>
             <div class="opacy_bg_02">
                 <div class="container">
-                    <h1>My Booking Candeled</h1>
+                    <h1>My Booking Cancelled</h1>
                     <div class="crumbs">
                         <ul>
                             <li><a href="/">Home</a></li>
                             <li>/</li>
-                            <li>My Booking Candeled</li>
+                            <li>My Booking Cancelled</li>
                         </ul>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-xs-6">
-                                                My Booking Candeled
+                                                My Booking Cancelled
                                             </div>
                                             <div class="col-xs-6">
                                             

@@ -12,12 +12,12 @@
             <div class="bg_parallax image_02_parallax"></div>
             <div class="opacy_bg_02">
                 <div class="container">
-                    <h1>My Orders Canceled</h1>
+                    <h1>My Orders Cancelled</h1>
                     <div class="crumbs">
                         <ul>
                             <li><a href="/">Home</a></li>
                             <li>/</li>
-                            <li>My Orders Canceled</li>
+                            <li>My Orders Cancelled</li>
                         </ul>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-xs-6">
-                                                My Orders Canceled 
+                                                My Orders Cancelled 
                                             </div>
                                             <div class="col-xs-6">
                                             
