@@ -3,12 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use Livewire\WithFileUploads;
-use Carbon\Carbon;
-use Illuminate\Support\Str;
-use App\Models\ServiceCategory;
 use App\Models\Service;
-use App\Models\User;
 use App\Models\Booking;
 use App\Models\Pet;
 use Illuminate\Support\Facades\Auth;
@@ -61,11 +56,10 @@ class ServiceBookingComponent extends Component
         $this->validateOnly($fields, [
 
             'pet_id' => 'required',
-
             'time' => 'required',
             's_date' => 'required',
             'end_date' => 'required',
-            'description' => 'required',
+            'description' => ''
             // 'total' => 'required',
         ]);
     }
@@ -76,11 +70,10 @@ class ServiceBookingComponent extends Component
     {
         $this->validate([
             'pet_id' => 'required',
-
             'time' => 'required',
             's_date' => 'required',
             'end_date' => 'required',
-            'description' => 'required',
+            'description' => '',
             //'total' => 'required',
         ]);
 
@@ -93,8 +86,6 @@ class ServiceBookingComponent extends Component
         //$booking->total = $this->total;
         $booking->user_id = Auth::user()->id;
         $booking->service_id = $this->service_id;
-
-
         $booking->save();
         session()->flash('message', 'Booking successfully! ');
     }

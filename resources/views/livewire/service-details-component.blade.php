@@ -98,7 +98,7 @@
                                                         <tr>
                                                             <td>Discount</td>
                                                             <td>{{$service->discount}}%</td>
-                                                            @php $total = ฿total-($total*$service->discount/100); @endphp
+                                                            @php $total = $total -($total*$service->discount/100); @endphp
                                                         </tr>
                                                     @endif
                                                 @endif
