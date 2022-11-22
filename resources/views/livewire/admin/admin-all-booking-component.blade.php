@@ -74,7 +74,14 @@
                                                         <td>{{$row->end_date}}</td>
                                                         <td>{{$row->description}}</td>
                                                         <td>{{$row->service->user->name}}</td>                                                                                                    
-                                                        <td>{{$row->status}}</td>
+                                                        <td>@if($row->status==1)
+                                                                pending
+                                                            @elseif ($row->status==2)
+                                                                จองแล้ว
+                                                            @else
+                                                                ยกเลิกแล้ว
+                                                            @endif
+                                                        </td>
                                                                                                           
                                                     </tr>
                                                 @endforeach
