@@ -49,6 +49,7 @@ use App\Http\Livewire\BookingCanceledComponent;
 use App\Http\Livewire\BookingOrderedComponent;
 use App\Http\Livewire\MybookingCancelComponent;
 use App\Http\Livewire\MybookingOrderedComponent;
+use App\Http\Livewire\AdminAllNewsComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -158,6 +159,9 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
   // booking
   // Route::get('/service-booking', ServiceBookingComponent::class)->name('service_booking');
   Route::get('/all-booking', AdminAllBookingComponent::class)->name('all.booking');
+
+  //Route News
+  Route::get('/admin/all-news', AdminAllNewsComponent::class)->name('admin.all.news');
 });
 
 //Service Provider

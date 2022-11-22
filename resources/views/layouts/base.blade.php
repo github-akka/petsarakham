@@ -79,6 +79,7 @@
                                     <li><a href="{{ route('users') }}">User Management</a></li>
                                     <li><a href="{{ route('all.booking') }}">All Booking</a></li>
                                     <li><a href="{{ route('all.service') }}">All Service</a></li>
+                                    <li><a href="{{ route('admin.all.news') }}">All News</a></li>
                                     <li><a href="{{ route('chatify') }}">Message</a></li>
                                     <li><a href="{{ route('admin.service_categories') }}">Service Categories</a></li>
                                     
