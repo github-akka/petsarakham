@@ -67,7 +67,7 @@
                         </ul> 
                     </li>
                     
-                    <li> <a href="{{ route('home.service_categories')}}">แผนที่</a></li>
+                    <li> <a href="#">แผนที่</a></li>
                     <li> <a href="{{ route('show.news')}}">ข่าวสารต่างๆ</a></li>
 
                     @if(Route::has('login'))
