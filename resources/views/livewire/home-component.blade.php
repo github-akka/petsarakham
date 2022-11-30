@@ -45,7 +45,7 @@
                                 @foreach($scategories as $scategory)
                                     <li data-toggle="tooltip" title="" data-original-title="{{$scategory->name}}"> 
                                         <a href="{{route('home.service_by_category',['category_slug'=>$scategory->slug])}}">
-                                            <img src="{{ asset('images/categories') }}/{{$scategory->image}}" alt="{{$scategory->name}}">
+                                            <img src="{{ asset('images/categories') }}/{{$scategory->image}}" alt="{{$scategory->name}}" width="100px" height="auto">
                                         </a>
                                     </li>
                                 @endforeach   
@@ -115,7 +115,7 @@
                                             <a href="{{route('home.service_by_category',['category_slug'=>$f_category->slug])}}">
                                                 <div class="item-service-line">
                                                     <i class="fa"><img class="icon-img"
-                                                            src="{{ asset('images/categories') }}/{{$f_category->image}}"></i>
+                                                            src="{{ asset('images/categories') }}/{{$f_category->image}}" width="100px" height="auto"></i>
                                                     <h5>{{$f_category->name}}</h5>
                                                 </div>
                                             </a>
