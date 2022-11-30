@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>online services</title>
+    <title>Petsarakham</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -67,7 +67,7 @@
                         </ul> 
                     </li>
                     
-                    <li> <a href="{{ route('home.service_categories')}}">แผนที่</a></li>
+                    <li> <a href="#">แผนที่</a></li>
                     <li> <a href="{{ route('show.news')}}">ข่าวสารต่างๆ</a></li>
 
                     @if(Route::has('login'))
@@ -79,6 +79,7 @@
                                     <li><a href="{{ route('users') }}">User Management</a></li>
                                     <li><a href="{{ route('all.booking') }}">All Booking</a></li>
                                     <li><a href="{{ route('all.service') }}">All Service</a></li>
+                                    <li><a href="{{ route('admin.all.news') }}">All News</a></li>
                                     <li><a href="{{ route('chatify') }}">Message</a></li>
                                     <li><a href="{{ route('admin.service_categories') }}">Service Categories</a></li>
                                     
@@ -99,7 +100,7 @@
                                         <ul class="drop-down one-column hover-fade">
                                             <li><a href="{{ route('sprovider.orders_ordered')}}">จองสำเร็จ</a></li>
                                             <li><a href="{{ route('sprovider.order')}}">รออนุมัติ</a></li>
-                                            <li><a href="{{ route('sprovider.orders_canceled')}}">ยกเลิกแล้ว</a></li>   
+                                            <li><a href="{{ route('sprovider.orders_cancelled')}}">ยกเลิกแล้ว</a></li>   
                                         </ul>
                                     </li>                                
                                     <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
@@ -117,7 +118,7 @@
                                         <ul class="drop-down one-column hover-fade">
                                             <li><a href="{{ route('my_booking_ordered')}}">จองสำเร็จ</a></li>
                                             <li><a href="{{ route('my_booking')}}">รออนุมัติ</a></li>
-                                            <li><a href="{{ route('my_booking_canceled')}}">ยกเลิกแล้ว</a></li>
+                                            <li><a href="{{ route('my_booking_cancelled')}}">ยกเลิกแล้ว</a></li>
                                             
                                         </ul> 
                                     </li>
@@ -240,6 +241,7 @@
     <script type="text/javascript" src="{{ asset('assets/js/bootstrap3-typeahead.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/main.js') }}"></script>
     <script type="text/javascript">
+    
         jQuery(document).ready(function () {
             jQuery('.tp-banner').show().revolution({
                 dottedOverlay: "none",
