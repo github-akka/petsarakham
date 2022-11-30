@@ -147,7 +147,7 @@
                 </ul>
             </nav>
         </header>
-        {{$slot}}
+        @yield('content')
         <footer id="footer" class="footer-v1">
             <div class="container">
                 <div class="row visible-md visible-lg">
