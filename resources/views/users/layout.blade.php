@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Petsarakham</title>
+    <title>online services</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -66,9 +66,6 @@
                             
                         </ul> 
                     </li>
-                    
-                    <li> <a href="#">แผนที่</a></li>
-                    <li> <a href="{{ route('show.news')}}">ข่าวสารต่างๆ</a></li>
 
                     @if(Route::has('login'))
                         @auth
@@ -79,7 +76,6 @@
                                     <li><a href="{{ route('users') }}">User Management</a></li>
                                     <li><a href="{{ route('all.booking') }}">All Booking</a></li>
                                     <li><a href="{{ route('all.service') }}">All Service</a></li>
-                                    <li><a href="{{ route('admin.all.news') }}">All News</a></li>
                                     <li><a href="{{ route('chatify') }}">Message</a></li>
                                     <li><a href="{{ route('admin.service_categories') }}">Service Categories</a></li>
                                     
@@ -91,18 +87,13 @@
                             <li class="login-form"> <a href="#" title="Register">My Account : {{ Auth::user()->name }}</a>
                                 <ul class="drop-down one-column hover-fade">
                                     <li><a href="{{ route('sprovider.dashboard') }}">Dashboard</a></li>
-                                    <li><a href="{{ route('profile') }}">Profile</a></li>
-                                    <li><a href="{{ route('change.password')}}">Change password</a></li>
-                                    <li><a href="{{ route('news.all') }}">My News</a></li>
-                                    <li><a href="{{ route('sprovider.services') }}">My Services</a></li>
+                                    <li><a href="{{ route('chatify') }}">Profile</a></li>
+                                    <li><a href="{{ route('admin.all_services') }}">All Services</a></li>
                                     <li><a href="{{ route('chatify') }}">Message</a></li>
-                                    <li><a href="#">My Orders</a>
-                                        <ul class="drop-down one-column hover-fade">
-                                            <li><a href="{{ route('sprovider.orders_ordered')}}">จองสำเร็จ</a></li>
-                                            <li><a href="{{ route('sprovider.order')}}">รออนุมัติ</a></li>
-                                            <li><a href="{{ route('sprovider.orders_cancelled')}}">ยกเลิกแล้ว</a></li>   
-                                        </ul>
-                                    </li>                                
+                                    <li><a href="{{ route('sprovider.order') }}">My Orders</a></li>
+                                    
+
+                                    
                                     <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                 </ul>
                             </li>
@@ -112,18 +103,8 @@
                                 <ul class="drop-down one-column hover-fade">
                                     <li><a href="{{ route('customer.dashboard') }}">Dashboard</a></li>
                                     <li><a href="{{ route('profile') }}">Profile</a></li>
-                                    <li><a href="{{ route('change.password')}}">Change password</a></li>
-                                    <li><a href="{{ route('news.all') }}">All News</a></li>
-                                    <li> <a href="#">My Booking</a>
-                                        <ul class="drop-down one-column hover-fade">
-                                            <li><a href="{{ route('my_booking_ordered')}}">จองสำเร็จ</a></li>
-                                            <li><a href="{{ route('my_booking')}}">รออนุมัติ</a></li>
-                                            <li><a href="{{ route('my_booking_cancelled')}}">ยกเลิกแล้ว</a></li>
-                                            
-                                        </ul> 
-                                    </li>
-                                    
-
+                                    <li><a href="{{ route('change.password') }}">Change password</a></li>
+                                    <li><a href="{{ route('my_booking') }}">My Booking</a></li>
                                     <li><a href="{{ route('chatify') }}">Message</a></li>
                                     <li><a href="{{ route('all.pet') }}">สัตว์เลี้ยง</a></li>
                                     
@@ -241,7 +222,6 @@
     <script type="text/javascript" src="{{ asset('assets/js/bootstrap3-typeahead.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/main.js') }}"></script>
     <script type="text/javascript">
-    
         jQuery(document).ready(function () {
             jQuery('.tp-banner').show().revolution({
                 dottedOverlay: "none",
