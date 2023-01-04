@@ -8,24 +8,22 @@ use Illuminate\Support\Facades\DB;
 
 class Booking extends Model
 {
-    use HasFactory;
+	use HasFactory;
 
-    protected $table = "bookings";
+	protected $table = "bookings";
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+	public function user()
+	{
+		return $this->belongsTo(User::class, 'user_id');
+	}
 
-    public function service()
-    {
-        return $this->belongsTo(Service::class);
-    }
+	public function service()
+	{
+		return $this->belongsTo(Service::class, 'service_id');
+	}
 
-    public function pet()
-    {
-        return $this->belongsTo(Pet::class, 'pet_id');
-    }
-
-   
+	public function pet()
+	{
+		return $this->belongsTo(Pet::class, 'pet_id');
+	}
 }
