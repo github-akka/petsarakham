@@ -26,7 +26,7 @@
                     <form id="sform" action="{{route('searchServices')}}" method="post">
                         @csrf                        
                         <input type="text" id="q" name="q" required="required" placeholder="ค้นหา บริการ?"
-                            class="input-large typeahead" autocomplete="off">
+                            class="input-large typeahead" autocomplete="on">
                         <input type="submit" name="submit" value="Search">
                     </form>
                 </div>
@@ -68,14 +68,16 @@
                                 <hr class="tall">
                             </div>
                         </div>
-                        <div class="portfolioContainer" style="margin-top: -50px;">
+                        <div class="portfolioContainer" style="margin-top: -50px; width=350px; height=250px;">
                             @foreach($f_service as $service)
                                 <div class="col-xs-6 col-sm-4 col-md-3 hsgrids"
                                     style="padding-right: 5px;padding-left: 5px;">
                                     <a class="g-list" href="{{route('home.service_details',['service_slug'=>$service->slug])}}">
                                         <div class="img-hover">
-                                            <img src="{{ asset('images/services/thumbnails') }}/{{$service->thumbnail}}" alt="{{$service->name}}"
+											<div class="mx-auto my-auto" style="width: auto; height:300px; ">
+												<img src="{{ asset('images/services/thumbnails') }}/{{$service->thumbnail}}" width="350px" height="250px" alt="{{$service->name}}"
                                                 class="img-responsive">
+											</div>
                                         </div>
                                         <div class="info-gallery">
                                             <h3>{{$service->name}}</h3>
@@ -88,7 +90,6 @@
                                     </a>
                                 </div>
                             @endforeach
-                            
                         </div>
                     </div>
                 </div>
@@ -143,8 +144,10 @@
                                     style="padding-right: 5px;padding-left: 5px;">
                                     <a class="g-list" href="{{route('home.service_details',['service_slug'=>$c_service->slug])}}">
                                         <div class="img-hover">
-                                            <img src="{{ asset('images/services/thumbnails') }}/{{$c_service->thumbnail}}" alt="{{$c_service->name}}"
+											<div class="mx-auto my-auto" style="width: auto; height:300px; ">
+                                            <img src="{{ asset('images/services/thumbnails') }}/{{$c_service->thumbnail}}" width="350px" height="250px" alt="{{$c_service->name}}"
                                                 class="img-responsive">
+											</div>
                                         </div>
                                         <div class="info-gallery">
                                             <h3>{{$c_service->name}}</h3>

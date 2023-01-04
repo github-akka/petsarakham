@@ -33,8 +33,10 @@
                                         style="padding-right: 5px;padding-left: 5px;">
                                         <a class="g-list" href="{{route('home.service_details',['service_slug'=>$service->slug])}}">
                                             <div class="img-hover">
-                                                <img src="{{ asset('images/services/thumbnails')}}/{{$service->thumbnail}}" alt="{{$service->name}}"
+												<div class="mx-auto my-auto" style="width: auto; height:300px; ">
+                                                <img src="{{ asset('images/services/thumbnails')}}/{{$service->thumbnail}}" width="350px" height="250px" alt="{{$service->name}}"
                                                     class="img-responsive">
+												</div>
                                             </div>
                                             <div class="info-gallery">
                                                 <h3>{{$service->name}}</h3>
