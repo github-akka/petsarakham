@@ -57,6 +57,7 @@
                                                             <td>วันที่รับคืน</td>
                                                             <td>รายละเอียดการฝาก</td>
                                                             <td>ชื่อผู้จอง</td>
+                                                            <td>ยืนยันเมื่อ</td>
                                                             <td>Status</td>
                                                            
                                                         
@@ -65,17 +66,18 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach ($orders as $row)
+                                                        @foreach ($bookings as $row)
 
                                                             <tr>
                                                             
-                                                                <th>{{$orders->firstItem()+$loop->index}}</th>
+                                                                <th>{{$row->id}}</th>
                                                                 <td>{{$row->pet->name}}</td>
                                                                 <td>{{$row->time}}</td>
                                                                 <td>{{$row->s_date}}</td>
                                                                 <td>{{$row->end_date}}</td>
                                                                 <td>{{$row->description}}</td>
                                                                 <td>{{$row->user->name}}</td>
+                                                                <td>{{$row->ordered_date}}</td>
                                                                 <td>
                                                                     @if($row->status==1)
                                                                                 pending
@@ -90,9 +92,7 @@
 
                                                     </tbody>
                                                 </table>
-                                                <div class="pagination-block">
-                                                    {{ $orders->links('layouts.paginationlinks') }} 
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>        

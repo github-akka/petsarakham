@@ -10,11 +10,11 @@ use App\Models\ServiceCategory;
 
 class AllServiceComponent extends Component
 {
-    use WithPagination;
-    public function render()
-    {
+	use WithPagination;
+	public function render()
+	{
 
-        $services = Service::paginate(16);
-        return view('livewire.all-service-component',['services'=>$services])->layout('layouts.base');
-    }
+		$services = Service::paginate(16);
+		return view('livewire.all-service-component', ['services' => $services])->layout('layouts.base');
+	}
 }

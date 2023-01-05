@@ -40,9 +40,17 @@ class BookingOrderedComponent extends Component
 
     public function render()
     {
-        $bookings = Booking::where('service_id', Auth::user()->id)->where('status', 2)->paginate(5);
-        $orders = Booking::where('service_id', Auth::user()->id)->where('status', 2)->paginate(5);
+        $bookings = Booking::join('services', 'services.id', '=', 'bookings.service_id')
+            ->join('users', 'users.id', '=', 'bookings.user_id')
+            ->join('pets', 'pets.id', '=', 'bookings.pet_id')
+            ->where('bookings.status', 2)
+            ->where('services.user_id',  Auth::user()->id)
+            ->orderByDesc('bookings.id')
+            ->get(['bookings.*', 'users.name', 'pets.name']);
+
+        /*$bookings = Booking::where('service_id', Auth::user()->id)->where('status', 2)->paginate(5);
+        $orders = Booking::where('service_id', Auth::user()->id)->where('status', 2)->paginate(5);*/
         // $ssid = Service::whereIn('user_id',['service_id'])->get()->pluck('id');
-        return view('livewire.booking-ordered-component', ['orders' => $orders, 'bookings' => $bookings])->layout('layouts.base');
+        return view('livewire.booking-ordered-component', ['bookings' => $bookings])->layout('layouts.base');
     }
 }

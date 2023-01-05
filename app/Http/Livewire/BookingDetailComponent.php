@@ -17,29 +17,29 @@ use Livewire\WithPagination;
 
 class BookingDetailComponent extends Component
 {
-    use WithPagination;
+	use WithPagination;
 
-    public $booking_id;
+	public $booking_id;
 
-    public function mount($booking_id)
-    {
-        $this->booking_id = $booking_id;
-    }
+	public function mount($booking_id)
+	{
+		$this->booking_id = $booking_id;
+	}
 
-    public function cancelBooking()
-    {
-        $booking = Booking:: find($booking_id);
-        $booking->status = 'canceled';
-        $booking->canceled_date = DB:: raw('CURRENT_DATE');
-        $booking->save();
+	public function cancelBooking()
+	{
+		$booking = Booking::find($booking_id);
+		$booking->status = 'canceled';
+		$booking->canceled_date = DB::raw('CURRENT_DATE');
+		$booking->save();
 
-        session()->flash('message','Booking Canceled successfully! ');
-    }
+		session()->flash('message', 'Booking Canceled successfully! ');
+	}
 
-    public function render()
-    {
-        $bookings = Booking::where('user_id',Auth::user()->id)->where('id',$this->booking_id)->first();
-        
-        return view('livewire.booking-detail-component',['bookings'=>$bookings])->layout('layouts.base');
-    }
+	public function render()
+	{
+		$bookings = Booking::where('user_id', Auth::user()->id)->where('id', $this->booking_id)->first();
+
+		return view('livewire.booking-detail-component', ['bookings' => $bookings])->layout('layouts.base');
+	}
 }

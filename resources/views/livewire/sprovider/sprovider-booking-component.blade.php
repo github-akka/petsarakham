@@ -65,11 +65,11 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach ($orders as $row)
+                                                        @foreach ($bookings as $row)
 
                                                             <tr>
                                                             
-                                                                <th>{{$orders->firstItem()+$loop->index}}</th>
+                                                                <th>{{$row->id}}</th>
                                                                 <td>{{$row->pet->name}}</td>
                                                                 <td>{{$row->time}}</td>
                                                                 <td>{{$row->s_date}}</td>
@@ -96,9 +96,7 @@
 
                                                     </tbody>
                                                 </table>
-                                                <div class="pagination-block">
-                                                    {{ $orders->links('layouts.paginationlinks') }} 
-                                                </div>
+                                               
                                             </div>
                                         </div>
                                     </div>        

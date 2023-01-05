@@ -60,9 +60,6 @@
                                                                     <td>ชื่อร้านที่ฝาก</td>
                                                                     <td>สถานะการจอง</td>                                                   
                                                                     <td>Action</td>
-                                                                
-
-
                                                                 </tr>
                                                             </thead>
                                                             <tbody>

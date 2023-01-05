@@ -40,9 +40,19 @@ class BookingCanceledComponent extends Component
 
     public function render()
     {
-        $bookings = Booking::where('service_id', Auth::user()->id)->where('status', 3)->paginate(5);
-        $orders = Booking::where('service_id', Auth::user()->id)->where('status', 3)->paginate(5);
+        $bookings = Booking::join('services', 'services.id', '=', 'bookings.service_id')
+            ->join('users', 'users.id', '=', 'bookings.user_id')
+            ->join('pets', 'pets.id', '=', 'bookings.pet_id')
+            ->where('bookings.status', 3)
+            ->where('services.user_id',  Auth::user()->id)
+            ->orderByDesc('bookings.id')
+            //->limit(10)
+            ->get(['bookings.*', 'users.name', 'pets.name']);
+
+
+        /*$bookings = Booking::where('service_id', Auth::user()->id)->where('status', 3)->paginate(5);
+        $orders = Booking::where('service_id', Auth::user()->id)->where('status', 3)->paginate(5);*/
         // $ssid = Service::whereIn('user_id',['service_id'])->get()->pluck('id');
-        return view('livewire.booking-canceled-component', ['orders' => $orders, 'bookings' => $bookings])->layout('layouts.base');
+        return view('livewire.booking-canceled-component', ['bookings' => $bookings])->layout('layouts.base');
     }
 }
