@@ -11,12 +11,12 @@
             <div class="bg_parallax image_02_parallax"></div>
             <div class="opacy_bg_02">
                 <div class="container">
-                    <h1>All Service categories</h1>
+                    <h1>All Services</h1>
                     <div class="crumbs">
                         <ul>
                             <li><a href="/">Home</a></li>
                             <li>/</li>
-                            <li>All Service categories</li>
+                            <li>All Services</li>
                         </ul>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                                         <div class="panel-heading">
                                             <div class="row" >
                                                 <div class="col-xs-6">
-                                                    All Service Categories
+                                                    All Services
                                                 </div>
                                                 <div class="col-xs-6">
                                                 <a href="{{route('add_service')}}" class="btn btn-info pull-right">Add Service</a>
@@ -58,16 +58,11 @@
                                                                 <td>Featured</td>
                                                                 <td>Category</td>
                                                                 <td>Action</td>
-                                                            
-
-
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             @foreach ($services as $service)
-
-                                                                <tr>
-                                                                
+                                                                <tr>                                                  
                                                                     <th>{{$services->firstItem()+$loop->index}}</th>
                                                                     <td><img src="{{ asset('/images/services/thumbnails')}}/{{$service->thumbnail}}" width="60"/></td>
                                                                     <td>{{$service->name}}</td>
@@ -78,7 +73,6 @@
                                                                         @else
                                                                             Inactive
                                                                         @endif
-
                                                                     </td>
                                                                     <td>
                                                                         @if($service->featured)
@@ -96,22 +90,22 @@
                                                                     
                                                                 </tr>
                                                             @endforeach
-
                                                         </tbody>
                                                     </table>
+                                                    @if($services->count() > 0)  
+                                                    @else
+                                                        <h3 align="center"> ไม่มีรายการ !! </h3>
+                                                    @endif
                                                     {{$services->links()}}
                                                 </div>
                                             </div>
                                         </div>
                                     </div> 
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
 </div>
