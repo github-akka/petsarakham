@@ -35,9 +35,7 @@
                                             <div class="col-xs-6">
                                                 My Orders 
                                             </div>
-                                            <div class="col-xs-6">
-                                            
-
+                                            <div class="col-xs-6">                  
                                             </div>
                                         </div>
                                     </div>
@@ -59,55 +57,50 @@
                                                             <td>ชื่อผู้จอง</td>
                                                             <td>Status</td>
                                                             <td align="center">Action</td>
-                                                        
-
-
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach ($bookings as $row)
-
-                                                            <tr>
-                                                            
-                                                                <th>{{$row->id}}</th>
-                                                                <td>{{$row->pet->name}}</td>
-                                                                <td>{{$row->time}}</td>
-                                                                <td>{{$row->s_date}}</td>
-                                                                <td>{{$row->end_date}}</td>
-                                                                <td>{{$row->description}}</td>
-                                                                <td>{{$row->user->name}}</td>
-                                                                <td>
-                                                                    @if($row->status==1)
-                                                                                pending
-                                                                    @elseif ($row->status==2)
-                                                                                จองแล้ว
-                                                                    @else
-                                                                                ยกเลิกแล้ว
-                                                                    @endif
-                                                                </td>
-                        
-                                                                <td>
-                                                                    <a href="#" class="btn btn-warning" onclick="confirm('Are you sure, Confirm Order ?') || event.stopImmediatePropagation()" wire:click.prevent="updateBookingStatus({{$row->id}},'2')">Confirm</a>
-                                                                    <a href="#" class="btn btn-danger" onclick="confirm('Are you sure, Cancel Order ?') || event.stopImmediatePropagation()" wire:click.prevent="updateBookingStatus({{$row->id}},'3')">Cancel</a> 
-                                                                </td>
-                                                                
-                                                            </tr>
-                                                        @endforeach
-
+                                                        
+                                                            @foreach ($bookings as $row)
+                                                                <tr>                                                          
+                                                                    <th>{{$row->id}}</th>
+                                                                    <td>{{$row->pet->name}}</td>
+                                                                    <td>{{$row->time}}</td>
+                                                                    <td>{{$row->s_date}}</td>
+                                                                    <td>{{$row->end_date}}</td>
+                                                                    <td>{{$row->description}}</td>
+                                                                    <td>{{$row->user->name}}</td>
+                                                                    <td>
+                                                                        @if($row->status==1)
+                                                                                    pending
+                                                                        @elseif ($row->status==2)
+                                                                                    จองแล้ว
+                                                                        @else
+                                                                                    ยกเลิกแล้ว
+                                                                        @endif
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="#" class="btn btn-warning" onclick="confirm('Are you sure, Confirm Order ?') || event.stopImmediatePropagation()" wire:click.prevent="updateBookingStatus({{$row->id}},'2')">Confirm</a>
+                                                                        <a href="#" class="btn btn-danger" onclick="confirm('Are you sure, Cancel Order ?') || event.stopImmediatePropagation()" wire:click.prevent="updateBookingStatus({{$row->id}},'3')">Cancel</a> 
+                                                                    </td>                                              
+                                                                </tr>
+                                                            @endforeach
+                                                         
                                                     </tbody>
                                                 </table>
-                                               
+                                                @if($bookings->count() > 0)
+                                                @else
+                                                    <h3 align="center"> ไม่มีรายการ !! </h3>
+                                                @endif                                              
                                             </div>
                                         </div>
                                     </div>        
-                                </div>
-                                
+                                </div> 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
 </div>
 
