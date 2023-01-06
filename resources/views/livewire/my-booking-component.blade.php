@@ -37,7 +37,6 @@
                                                 My Booking 
                                             </div>
                                             <div class="col-xs-6">
-                                            
 
                                             </div>
                                         </div>
@@ -64,9 +63,7 @@
                                                             </thead>
                                                             <tbody>
                                                                 @foreach ($bookings as $row)
-
-                                                                    <tr>
-                                                                    
+                                                                    <tr>                                   
                                                                         <th>{{$bookings->firstItem()+$loop->index}}</th>
                                                                         <td>{{$row->pet->name}}</td>
                                                                         <td>{{$row->time}}</td>
@@ -85,16 +82,16 @@
                                                                         </td>
                                                                         <td>
                                                                             <button class="btn btn-danger" onclick="confirm('Are you sure, Cancel Booking') || event.stopImmediatePropagation()"
-                                                                            wire:click.prevent="updateBookingStatus({{$row->id}},'3')">Cancel</button>
-                                                                            
-                                                                            
-                                                                        </td>
-                                                                        
+                                                                            wire:click.prevent="updateBookingStatus({{$row->id}},'3')">Cancel</button>                                              
+                                                                        </td>               
                                                                     </tr>
                                                                 @endforeach
-
                                                             </tbody>
                                                         </table>
+                                                        @if($bookings->count() > 0)  
+                                                        @else
+                                                            <h3 align="center"> ไม่มีรายการ !! </h3>
+                                                        @endif
                                                     <div class="pagination-block">
                                                         {{ $bookings->links('layouts.paginationlinks') }} 
                                                     </div>
