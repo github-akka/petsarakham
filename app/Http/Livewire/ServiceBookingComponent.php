@@ -57,8 +57,8 @@ class ServiceBookingComponent extends Component
 
             'pet_id' => 'required',
             'time' => 'required',
-            's_date' => 'required',
-            'end_date' => 'required',
+            's_date' => 'required|date|before:end_date',
+            'end_date'  => 'required|date|after:s_date',
             'description' => ''
             // 'total' => 'required',
         ]);
@@ -71,8 +71,8 @@ class ServiceBookingComponent extends Component
         $this->validate([
             'pet_id' => 'required',
             'time' => 'required',
-            's_date' => 'required',
-            'end_date' => 'required',
+            's_date' => 'required|date|before:end_date',
+            'end_date'  => 'required|date|after:s_date',
             'description' => '',
             //'total' => 'required',
         ]);

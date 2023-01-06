@@ -15,7 +15,7 @@ use App\Http\Livewire\Admin\AdminAddServiceCategoryComponent;
 use App\Http\Livewire\Admin\AdminServicesComponent;
 use App\Http\Livewire\Admin\AdminAllBookingComponent;
 use App\Http\Livewire\Admin\AdminAllServiceComponent;
-use App\Http\Livewire\CheckoutComponent;
+//use App\Http\Livewire\CheckoutComponent;
 
 use App\Http\Livewire\ProductCategoriesComponent;
 use App\Http\Livewire\Admin\AdminAddServiceComponent;
@@ -77,7 +77,7 @@ Route::get('login/facebook', [App\Http\Controllers\Auth\LoginController::class, 
 Route::get('login/facebook/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleFacebookCallback']);
 
 //Route::get('/room-service', RoomServiceComponent::class)->name('room.service');
-Route::get('/checkout', CheckoutComponent::class)->name('checkout');
+//Route::get('/checkout', CheckoutComponent::class)->name('checkout');
 //Route::get('/room/{slug}', RoomDetailComponent::class)->name('room.details');
 Route::get('/service/{service_slug}', ServiceDetailsComponent::class)->name('home.service_details');
 
