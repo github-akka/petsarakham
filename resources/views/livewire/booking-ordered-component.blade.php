@@ -59,17 +59,11 @@
                                                             <td>ชื่อผู้จอง</td>
                                                             <td>ยืนยันเมื่อ</td>
                                                             <td>Status</td>
-                                                           
-                                                        
-
-
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         @foreach ($bookings as $row)
-
-                                                            <tr>
-                                                            
+                                                            <tr>                                                         
                                                                 <th>{{$row->id}}</th>
                                                                 <td>{{$row->pet->name}}</td>
                                                                 <td>{{$row->time}}</td>
@@ -89,10 +83,12 @@
                                                                 </td>
                                                             </tr>
                                                         @endforeach
-
                                                     </tbody>
                                                 </table>
-                                                
+                                                @if($bookings->count() > 0)
+                                                @else
+                                                    <h3 align="center"> ไม่มีรายการ !! </h3>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>        

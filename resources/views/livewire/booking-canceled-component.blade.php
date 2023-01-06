@@ -88,7 +88,10 @@
 
                                                     </tbody>
                                                 </table>
-                                               
+                                                @if($bookings->count() > 0)
+                                                @else
+                                                    <h3 align="center"> ไม่มีรายการ !! </h3>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>        
