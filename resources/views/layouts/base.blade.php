@@ -56,90 +56,83 @@
 
                 <ul class="collapse">
                     <li class="title">
-                        <a href="/"><img src="{{ asset('images/pet.png')}}"></a>
+                        <a href="/"><img src="{{ asset('images/pet.png')}}" width="200px" height="110px"></a>
                     </li>
-                    <li> <a href="{{ route('home.service_categories')}}">Service Categories</a></li>
+                    <li> <a href="{{ route('home.service_categories')}}"><b>Service Categories</b></a></li>
                     
-                    <li> <a href="{{ route('service.all')}}">บริการฝากสัตว์เลี้ยง</a>
+                    <li> <a href="{{ route('service.all')}}"><b>บริการฝากสัตว์เลี้ยง</b></a>
                         <ul class="drop-down one-column hover-fade">
-                            <li><a href="{{ route('service.all')}}">บริการทั้งหมด</a></li>
+                            <li><a href="{{ route('service.all')}}"><b>บริการทั้งหมด</b></a></li>
                             
                         </ul> 
                     </li>
                     
-                    <li> <a href="#">แผนที่</a></li>
-                    <li> <a href="{{ route('show.news')}}">ข่าวสารต่างๆ</a></li>
+                    <li> <a href="#"><b>แผนที่</b></a></li>
+                    <li> <a href="{{ route('show.news')}}"><b>ข่าวสารต่างๆ</b></a></li>
 
                     @if(Route::has('login'))
                         @auth
                             @if(Auth::user()->utype==='ADM')
-                            <li class="login-form"> <a href="#" title="Register">My Account : {{ Auth::user()->name }}</a>
+                            <li class="login-form"> <a href="#" title="Register"><b>My Account : {{ Auth::user()->name }}</b></a>
                                 <ul class="drop-down one-column hover-fade">
-                                    <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                                    <li><a href="{{ route('users') }}">User Management</a></li>
-                                    <li><a href="{{ route('all.booking') }}">All Booking</a></li>
-                                    <li><a href="{{ route('all.service') }}">All Service</a></li>
-                                    <li><a href="{{ route('admin.all.news') }}">All News</a></li>
-                                    <li><a href="{{ route('chatify') }}">Message</a></li>
-                                    <li><a href="{{ route('admin.service_categories') }}">Service Categories</a></li>
+                                    <li><a href="{{ route('admin.dashboard') }}"><b>Dashboard</b></a></li>
+                                    <li><a href="{{ route('users') }}"><b>User Management</b></a></li>
+                                    <li><a href="{{ route('all.booking') }}"><b>All Booking</b></a></li>
+                                    <li><a href="{{ route('all.service') }}"><b>All Service</b></a></li>
+                                    <li><a href="{{ route('admin.all.news') }}"><b>All News</b></a></li>
+                                    <li><a href="{{ route('chatify') }}"><b>Message</b></a></li>
+                                    <li><a href="{{ route('admin.service_categories') }}"><b>Service Categories</b></a></li>
                                     
-                                    <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                                    <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><b>Logout</b></a></li>
                                 </ul>
                             </li>
 
                             @elseif(Auth::user()->utype==='SVP')
-                            <li class="login-form"> <a href="#" title="Register">My Account : {{ Auth::user()->name }}</a>
+                            <li class="login-form"> <a href="#" title="Register"><b>My Account : {{ Auth::user()->name }}</b></a>
                                 <ul class="drop-down one-column hover-fade">
-                                    <li><a href="{{ route('sprovider.dashboard') }}">Dashboard</a></li>
-                                    <li><a href="{{ route('profile') }}">Profile</a></li>
-                                    <li><a href="{{ route('change.password')}}">Change password</a></li>
-                                    <li><a href="{{ route('news.all') }}">My News</a></li>
-                                    <li><a href="{{ route('sprovider.services') }}">My Services</a></li>
-                                    <li><a href="{{ route('chatify') }}">Message</a></li>
-                                    <li><a href="#">My Orders</a>
+                                    <li><a href="{{ route('sprovider.dashboard') }}"><b>Dashboard</b></a></li>
+                                    <li><a href="{{ route('profile') }}"><b>Profile</b></a></li>
+                                    <li><a href="{{ route('change.password')}}"><b>Change password</b></a></li>
+                                    <li><a href="{{ route('news.all') }}"><b>My News</b></a></li>
+                                    <li><a href="{{ route('sprovider.services') }}"><b>My Services</b></a></li>
+                                    <li><a href="{{ route('chatify') }}"><b>Message</b></a></li>
+                                    <li><a href="#"><b>My Orders</b></a>
                                         <ul class="drop-down one-column hover-fade">
-                                            <li><a href="{{ route('sprovider.orders_ordered')}}">จองสำเร็จ</a></li>
-                                            <li><a href="{{ route('sprovider.order')}}">รออนุมัติ</a></li>
-                                            <li><a href="{{ route('sprovider.orders_cancelled')}}">ยกเลิกแล้ว</a></li>   
+                                            <li><a href="{{ route('sprovider.orders_ordered')}}"><b>จองสำเร็จ</b></a></li>
+                                            <li><a href="{{ route('sprovider.order')}}"><b>รออนุมัติ</b></a></li>
+                                            <li><a href="{{ route('sprovider.orders_cancelled')}}"><b>ยกเลิกแล้ว</b></a></li>   
                                         </ul>
                                     </li>                                
-                                    <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                                    <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</b></a></li>
                                 </ul>
                             </li>
 
                             @else
-                            <li class="login-form"> <a href="#" title="Register">My Account : {{ Auth::user()->name }}</a>
+                            <li class="login-form"> <a href="#" title="Register">My Account : {{ Auth::user()->name }}</b></a>
                                 <ul class="drop-down one-column hover-fade">
-                                    <li><a href="{{ route('customer.dashboard') }}">Dashboard</a></li>
-                                    <li><a href="{{ route('profile') }}">Profile</a></li>
-                                    <li><a href="{{ route('change.password')}}">Change password</a></li>
-                                    <li><a href="{{ route('news.all') }}">All News</a></li>
-                                    <li> <a href="#">My Booking</a>
+                                    <li><a href="{{ route('customer.dashboard') }}"><b>Dashboard</b></a></li>
+                                    <li><a href="{{ route('profile') }}"><b>Profile</b></a></li>
+                                    <li><a href="{{ route('change.password')}}"><b>Change password</b></a></li>
+                                    <li><a href="{{ route('news.all') }}"><b>All News</b></a></li>
+                                    <li> <a href="#"><b>My Booking</b></a>
                                         <ul class="drop-down one-column hover-fade">
-                                            <li><a href="{{ route('my_booking_ordered')}}">จองสำเร็จ</a></li>
-                                            <li><a href="{{ route('my_booking')}}">รออนุมัติ</a></li>
-                                            <li><a href="{{ route('my_booking_cancelled')}}">ยกเลิกแล้ว</a></li>
-                                            
+                                            <li><a href="{{ route('my_booking_ordered')}}"><b>จองสำเร็จ</b></a></li>
+                                            <li><a href="{{ route('my_booking')}}"><b>รออนุมัติ</b></a></li>
+                                            <li><a href="{{ route('my_booking_cancelled')}}"><b>ยกเลิกแล้ว</b></a></li>                                   
                                         </ul> 
                                     </li>
-                                    
-
-                                    <li><a href="{{ route('chatify') }}">Message</a></li>
-                                    <li><a href="{{ route('all.pet') }}">สัตว์เลี้ยง</a></li>
-                                    
-                                    <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                                    <li><a href="{{ route('chatify') }}"><b>Message</b></a></li>
+                                    <li><a href="{{ route('all.pet') }}"><b>สัตว์เลี้ยง</b></a></li>         
+                                    <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><b>Logout</b></a></li>
                                 </ul>
                             </li>
-                            @endif
-                        
-                    
+                            @endif      
                         <form id="logout-form" method="POST" action= "{{route('logout')}}">
                             @csrf
-                        </form>
-                        
+                        </form>           
                     @else
-                    <li class="login-form"> <a href="{{route('register')}}" title="Register">Register</a></li>
-                    <li class="login-form"> <a href="{{route('login')}}" title="Login">Login</a></li>
+                    <li class="login-form"> <a href="{{route('register')}}" title="Register"><b>Register</b></a></li>
+                    <li class="login-form"> <a href="{{route('login')}}" title="Login"><b>Login</b></a></li>
                     @endif
                 @endif
                     <li class="search-bar">
