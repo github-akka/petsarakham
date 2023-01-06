@@ -26,7 +26,7 @@
                     <form id="sform" action="{{route('searchServices')}}" method="post">
                         @csrf                        
                         <input type="text" id="q" name="q" required="required" placeholder="ค้นหา บริการ?"
-                            class="input-large typeahead" autocomplete="on">
+                            autocomplete="on">
                         <input type="submit" name="submit" value="Search">
                     </form>
                 </div>
