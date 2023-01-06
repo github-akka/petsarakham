@@ -56,16 +56,11 @@
                                                             <td>อายุ</td>
                                                             <td>น้ำหนัก</td>
                                                             <td>Action</td>
-                                                        
-
-
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         @foreach ($spets as $spet)
-
-                                                            <tr>
-                                                            
+                                                            <tr>                                                       
                                                                 <th>{{$spets->firstItem()+$loop->index}}</th>
                                                                 <td><img src="{{ asset('/images/pets')}}/{{$spet->pet_image}}" width="60"/></td>
                                                                 <td>{{$spet->name}}</td>
@@ -75,13 +70,15 @@
                                                                 <td>
                                                                     <a href="{{route('edit.pet',['pet_id'=>$spet->id])}}"><i class="fa fa-edit fa-2x text-info"></i></a>
                                                                     <a href="#" onclick="confirm('Are you sure, Delete Pet') || event.stopImmediatePropagation()" wire:click.prevent="deletePet({{$spet->id}})" style="margin-left-10px" ><i class="fa fa-times fa-2x text-danger"></i></a>
-                                                                </td>
-                                                                
+                                                                </td>                     
                                                             </tr>
                                                         @endforeach
-
                                                     </tbody>
                                                 </table>
+                                                @if($spets->count() > 0)  
+                                                @else
+                                                    <h3 align="center"> กรุณาเพิ่มสัตว์เลี้ยง !! </h3>
+                                                @endif
                                                 {{$spets->links()}}
                                             </div>
                                         </div>
