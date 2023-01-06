@@ -51,14 +51,14 @@
                                             <div class="post-content">
                                                 <h3>{{$service->name}}</h3>
                                                 <p>{{$service->description}}</p>
-                                                <h4>Inclusion</h4>
+                                                <h4>สิทธิพิเศษ</h4>
                                                 <ul class="list-styles">
                                                     @foreach(explode("|",$service->inclusion) as $inclusion)
                                                     <li><i class="fa fa-plus"></i>{{$inclusion}}</li>
                                                     @endforeach
                                                 
                                                 </ul>
-                                                <h4>Exclusion</h4>
+                                                <h4>กฎเกณฑ์ของร้าน</h4>
                                                 <ul class="list-styles">
                                                     @foreach(explode("|",$service->exclusion) as $exclusion)
                                                         <li><i class="fa fa-minus"></i>{{$exclusion}}</li>
