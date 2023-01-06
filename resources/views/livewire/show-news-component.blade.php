@@ -32,8 +32,11 @@
 							<div class="col-xs-6 col-sm-4 col-md-3 nature hsgrids"
                                         style="padding-right: 5px;padding-left: 5px;">
                                             <div class="img-hover">
-                                                <img src="{{ asset('images/news')}}/{{$new->image}}" alt="{{$new->title}}"
+                                                <div class="mx-auto my-auto" style="width: auto; height:300px; ">
+                                                    <img src="{{ asset('images/news')}}/{{$new->image}}"  width="300px" height="200px" alt="{{$new->title}}"
                                                     class="img-responsive">
+                                                </div>
+                                                
                                             </div>
                                             <div class="info-gallery">
                                                 <h3>{{$new->title}}</h3>
