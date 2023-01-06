@@ -52,30 +52,26 @@
                                                     <td>หัวข้อ</td>
                                                     <td>เนื้อหา</td>
                                                     <td>Action</td>
-                                                   
-
-
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach ($snews as $snew)
-
-                                                    <tr>
-                                                    
+                                                    <tr>                                             
                                                         <th>{{$snews->firstItem()+$loop->index}}</th>
                                                         <td><img src="{{ asset('/images/news')}}/{{$snew->image}}" width="60"/></td>
                                                         <td>{{$snew->title}}</td>
                                                         <td>{{$snew->body}}</td>
-                                                        <td>
-                                                            
+                                                        <td>                                                 
                                                             <a href="#" onclick="confirm('Are you sure, Delete News') || event.stopImmediatePropagation()" wire:click.prevent="deleteNews({{$snew->id}})" style="margin-left-10px" ><i class="fa fa-times fa-2x text-danger"></i></a>
-                                                        </td>
-                                                        
+                                                        </td>                                                 
                                                     </tr>
                                                 @endforeach
-
                                             </tbody>
                                         </table>
+                                        @if($snews->count() > 0)
+                                                @else
+                                                    <h3 align="center"> ไม่มีรายการ !! </h3>
+                                                @endif
                                         {{$snews->links()}}
                                     </div>
                                 </div>
