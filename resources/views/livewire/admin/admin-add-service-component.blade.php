@@ -55,7 +55,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <lable for="tagline" class="control-lable col-sm-3">Tagline: </lable>
+                                                <lable for="tagline" class="control-lable col-sm-3">สโลแกนของร้าน: </lable>
                                                 <div class="col-sm-9">
                                                     <input type="text" class="form-control" name="tagline" wire:model="tagline" />
                                                     @error('tagline') <p class="text-danger">{{$message}}</p> @enderror
@@ -76,7 +76,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <lable for="price" class="control-lable col-sm-3">Price: </lable>
+                                                <lable for="price" class="control-lable col-sm-3">ราคา: </lable>
                                                 <div class="col-sm-9">
                                                     <input type="text" class="form-control" name="price" wire:model="price" />
                                                     @error('price') <p class="text-danger">{{$message}}</p> @enderror
