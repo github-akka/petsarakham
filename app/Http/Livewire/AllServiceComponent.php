@@ -14,7 +14,8 @@ class AllServiceComponent extends Component
 	public function render()
 	{
 
-		$services = Service::paginate(16);
+		//$services = Service::paginate(16);
+		$services = Service::select('name', 'slug', 'tagline', 'price', 'thumbnail')->simplePaginate(16);
 		return view('livewire.all-service-component', ['services' => $services])->layout('layouts.base');
 	}
 }
