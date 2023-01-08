@@ -11,17 +11,17 @@ class Service extends Model
 
     protected $table = "services";
 
-    public function category() {
+    public function category()
+    {
 
-        return $this->belongsTo(ServiceCategory::class, 'service_category_id'); 
+        return $this->belongsTo(ServiceCategory::class, 'service_category_id');
     }
     public function user()
-   {
-       return $this->belongsTo(User::class);
-   }
-   public function booking()
-   {
-       return $this->belongsTo(Booking::class);
-   }
-
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+    public function booking()
+    {
+        return $this->belongsTo(Booking::class);
+    }
 }
