@@ -16,6 +16,7 @@ use App\Http\Livewire\Admin\AdminServicesComponent;
 use App\Http\Livewire\Admin\AdminAllBookingComponent;
 use App\Http\Livewire\Admin\AdminAllServiceComponent;
 //use App\Http\Livewire\CheckoutComponent;
+use App\http\Livewire\UserGuideComponent;
 
 use App\Http\Livewire\ProductCategoriesComponent;
 use App\Http\Livewire\Admin\AdminAddServiceComponent;
@@ -67,6 +68,8 @@ use App\Http\Livewire\AdminAllNewsComponent;
 });*/
 
 Route::get('/', HomeComponent::class)->name('home');
+
+Route::get('/user-guides', UserGuideComponent::class)->name('user.guides');
 
 // Google login
 Route::get('login/google', [App\Http\Controllers\Auth\LoginController::class, 'redirectToGoogle'])->name('login.google');

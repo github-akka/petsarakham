@@ -200,6 +200,7 @@
                                 <li><a href="#">FAQ</a></li>
                                 <li><a href="#">Terms of Use</a></li>
                                 <li><a href="#">Privacy</a></li>
+                                <li><a href="{{ route ('user.guides') }}">คู่มือการใช้งาน</a></li>
                             </ul>
                         </div>
                         <div class="col-md-6">
