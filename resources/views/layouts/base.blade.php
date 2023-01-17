@@ -103,7 +103,7 @@
                                             <li><a href="{{ route('sprovider.orders_cancelled')}}"><b>ยกเลิกแล้ว</b></a></li>   
                                         </ul>
                                     </li>                                
-                                    <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</b></a></li>
+                                    <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><b>Logout</b></a></li>
                                 </ul>
                             </li>
 
