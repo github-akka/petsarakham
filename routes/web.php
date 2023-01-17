@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
+use Prophecy\Call\Call;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\ServiceCategoriesComponent;
 use App\Http\Livewire\ServiceByCategoryComponent;
@@ -17,6 +19,7 @@ use App\Http\Livewire\Admin\AdminAllBookingComponent;
 use App\Http\Livewire\Admin\AdminAllServiceComponent;
 //use App\Http\Livewire\CheckoutComponent;
 use App\http\Livewire\UserGuideComponent;
+use App\Http\Controllers\OptimizeController;
 
 use App\Http\Livewire\ProductCategoriesComponent;
 use App\Http\Livewire\Admin\AdminAddServiceComponent;
@@ -70,6 +73,11 @@ use App\Http\Livewire\AdminAllNewsComponent;
 Route::get('/', HomeComponent::class)->name('home');
 
 Route::get('/user-guides', UserGuideComponent::class)->name('user.guides');
+
+//Optimize
+Route::get('/route-cache', 'App\Http\Controllers\OptimizeController@RouteCache');
+Route::get('/route-clear', 'App\Http\Controllers\OptimizeController@clearRoute');
+
 
 // Google login
 Route::get('login/google', [App\Http\Controllers\Auth\LoginController::class, 'redirectToGoogle'])->name('login.google');
