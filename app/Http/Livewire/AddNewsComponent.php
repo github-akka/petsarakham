@@ -11,6 +11,8 @@ use App\Models\News;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\WithPagination;
+//use Intervention\Image\ImageManager;
+use Image;
 
 class AddNewsComponent extends Component
 {
@@ -22,10 +24,11 @@ class AddNewsComponent extends Component
     public $user_id;
 
 
+
     public function updated($fields)
 
     {
-        $this->validateOnly($fields,[
+        $this->validateOnly($fields, [
             'title' => 'required',
             'body' => 'required',
             'image' => 'required|mimes:jpg,png,jpeg',
@@ -40,17 +43,19 @@ class AddNewsComponent extends Component
             'body' => 'required',
             'image' => 'required|mimes:jpg,png,jpeg',
         ]);
-
+        $x = 2;
         $snew = new News();
         $snew->title = $this->title;
         $snew->body = $this->body;
-        $imageName = Carbon::now()->timestamp. '.' .$this->image->extension();
-        $this->image->storeAs('news',$imageName);
+        $imageName = Carbon::now()->timestamp . '.' . $this->image->extension();
+        //$snew = Image::make($image->path());
+        //$snew->image->make('public/foo.jpg')->resize(300, 200);
+        $this->image->storeAs('news', $imageName, $x);
         $snew->image = $imageName;
+
         $snew->user_id = Auth::user()->id;
         $snew->save();
-        session()->flash('message','News has been created successfully! ');
-
+        session()->flash('message', 'News has been created successfully! ');
     }
 
 
