@@ -3,12 +3,12 @@
             <div class="bg_parallax image_01_parallax"></div>
             <div class="opacy_bg_02">
                 <div class="container">
-                    <h1> All Service</h1>
+                    <h1> All Services</h1>
                     <div class="crumbs">
                         <ul>
                             <li><a href="/">Home</a></li>
                             <li>/</li>
-                            <li> All Service</li>
+                            <li> All Services</li>
                         </ul>
                     </div>
                 </div>

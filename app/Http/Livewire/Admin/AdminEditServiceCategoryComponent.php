@@ -27,29 +27,26 @@ class AdminEditServiceCategoryComponent extends Component
         $this->slug = $scategory->slug;
         $this->featured = $scategory->featured;
         $this->image = $scategory->image;
-        
     }
 
     public function generateSlug()
     {
-        $this->slug = Str::slug($this->name,"-");
+        $this->slug = Str::slug($this->name, "-");
     }
 
     public function updated($fields)
     {
-        $this->validateOnly($fields,[
+        $this->validateOnly($fields, [
             'name' => 'required',
             'slug' => 'required',
         ]);
 
-        if($this->newimage)
-        {
-         $this->validateOnly($fields,[
-             
-             'newimage' => 'required|mimes:jpg,png,jpeg'
+        if ($this->newimage) {
+            $this->validateOnly($fields, [
+
+                'newimage' => 'required|mimes:jpg,png,jpeg'
             ]);
         }
-        
     }
 
     public function updateServiceCategory()
@@ -57,35 +54,31 @@ class AdminEditServiceCategoryComponent extends Component
         $this->validate([
             'name' => 'required',
             'slug' => 'required',
-           ]);
-       if($this->newimage)
-       {
-        $this->validate([
-            
-            'newimage' => 'required|mimes:jpg,png,jpeg'
-           ]);
-       }
+        ]);
+        if ($this->newimage) {
+            $this->validate([
+
+                'newimage' => 'required|mimes:jpg,png,jpeg'
+            ]);
+        }
 
         $scategory = ServiceCategory::find($this->category_id);
         $scategory->name = $this->name;
         $scategory->slug = $this->slug;
         $scategory->featured = $this->featured;
-        if($this->newimage)
-        {
-            $imageName = Carbon::now()->timestamp. '.' .$this->newimage->extension();
-            $this->newimage->storeAs('categories',$imageName);
+        if ($this->newimage) {
+            unlink('images/categories' . '/' . $scategory->image);
+            $imageName = Carbon::now()->timestamp . '.' . $this->newimage->extension();
+            $this->newimage->storeAs('categories', $imageName);
             $scategory->image = $imageName;
         }
         $scategory->save();
-        session()->flash('message','Category has been updated successfully! ');
-        
-        
-        
+        session()->flash('message', 'Category has been updated successfully! ');
     }
 
     public function render()
     {
-       
+
         return view('livewire.admin.admin-edit-service-category-component')->layout('layouts.base');
     }
 }

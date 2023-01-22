@@ -78,7 +78,7 @@
                                             <div class="form-group">
                                                 <lable for="price" class="control-lable col-sm-3">ราคา: </lable>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" name="price" wire:model="price" />
+                                                    <input type="number" class="form-control" name="price" wire:model="price" />
                                                     @error('price') <p class="text-danger">{{$message}}</p> @enderror
                                                 </div>
                                             </div>
@@ -86,7 +86,7 @@
                                             <div class="form-group">
                                                 <lable for="discount" class="control-lable col-sm-3">ส่วนลด (ไม่ใส่ก็ได้) </lable>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" name="discount" wire:model="discount" />
+                                                    <input type="number" class="form-control" min="5"  name="discount" wire:model="discount" />
                                                     @error('discount') <p class="text-danger">{{$message}}</p> @enderror
                                                 </div>
                                             </div>

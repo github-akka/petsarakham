@@ -23,8 +23,8 @@ class AdminAllServiceComponent extends Component
 
     public function render()
     {
-        $aservice = Service::paginate(10);
-        
-        return view('livewire.admin.admin-all-service-component',['aservice'=>$aservice])->layout('layouts.base');
+        $aservice = Service::simplePaginate(10);
+
+        return view('livewire.admin.admin-all-service-component', ['aservice' => $aservice])->layout('layouts.base');
     }
 }

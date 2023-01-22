@@ -32,27 +32,24 @@ class EditPetComponent extends Component
         $this->age = $spet->age;
         $this->weight = $spet->weight;
         $this->pet_image = $spet->pet_image;
-        
     }
 
 
     public function updated($fields)
     {
-        $this->validateOnly($fields,[
+        $this->validateOnly($fields, [
             'name' => 'required',
             'pet_type' => 'required',
             'age' => 'required',
             'weight' => 'required',
         ]);
 
-        if($this->newimage)
-        {
-         $this->validateOnly($fields,[
-             
-             'newimage' => 'required|mimes:jpg,png,jpeg'
+        if ($this->newimage) {
+            $this->validateOnly($fields, [
+
+                'newimage' => 'required|mimes:jpg,png,jpeg'
             ]);
         }
-        
     }
 
     public function updatePet()
@@ -62,36 +59,32 @@ class EditPetComponent extends Component
             'pet_type' => 'required',
             'age' => 'required',
             'weight' => 'required',
-           ]);
-       if($this->newimage)
-       {
-        $this->validate([
-            
-            'newimage' => 'required|mimes:jpg,png,jpeg'
-           ]);
-       }
+        ]);
+        if ($this->newimage) {
+            $this->validate([
+
+                'newimage' => 'required|mimes:jpg,png,jpeg'
+            ]);
+        }
 
         $spet = Pet::find($this->pet_id);
         $spet->name = $this->name;
         $spet->pet_type = $this->pet_type;
         $spet->age = $this->age;
         $spet->weight = $this->weight;
-        if($this->newimage)
-        {
-            $imageName = Carbon::now()->timestamp. '.' .$this->newimage->extension();
-            $this->newimage->storeAs('pets',$imageName);
-            $spet->image = $imageName;
+        if ($this->newimage) {
+            unlink('images/services' . '/' . $spet->pet_image);
+            $imageName = Carbon::now()->timestamp . '.' . $this->newimage->extension();
+            $this->newimage->storeAs('pets', $imageName);
+            $spet->pet_image = $imageName;
         }
         $spet->save();
-        session()->flash('message','Pet has been updated successfully! ');
-        
-        
-        
+        session()->flash('message', 'Pet has been updated successfully! ');
     }
 
     public function render()
     {
-        
+
         return view('livewire.edit-pet-component')->layout('layouts.base');
     }
 }

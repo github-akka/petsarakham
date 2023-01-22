@@ -137,6 +137,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
   Route::get('/pet-all', AllPetComponent::class)->name('all.pet');
   Route::get('/pet/add', AddPetComponent::class)->name('add.pet');
   Route::get('/pet/edit/{pet_id}', EditPetComponent::class)->name('edit.pet');
+  //Route::delete("delete", [AddPetComponent::class, "deletePet"])->name("delete.pet");
 
   // booking
   //  Route::get('/service-booking/service_id={service_id}', ServiceBookingComponent::class)->name('service_booking');
